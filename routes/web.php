@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,4 +10,5 @@ Route::get('/', function () {
 
 Route::prefix('api')->group(function () {
     Route::apiResource('/categorias', CategoriaController::class); // /api/categorias URL
+    Route::apiResource('/productos', ProductoController::class); // /api/productos URL
 });
