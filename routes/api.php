@@ -13,3 +13,5 @@ Route::get('/user', function (Request $request) {
 Route::apiResource('/categorias', CategoriaController::class); // GET /api/categorias URL
 Route::apiResource('/productos', ProductoController::class); // GET /api/productos URL
 Route::post('/registro', [AuthController::class, 'register']); // POST /api/registro URL
+Route::post('/login', [AuthController::class, 'login']); // POST /api/login URL
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum'); // POST /api/logout URL
