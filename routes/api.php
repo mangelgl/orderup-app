@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,3 +16,4 @@ Route::apiResource('/productos', ProductoController::class); // GET /api/product
 Route::post('/registro', [AuthController::class, 'register']); // POST /api/registro URL
 Route::post('/login', [AuthController::class, 'login']); // POST /api/login URL
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum'); // POST /api/logout URL
+Route::apiResource('/pedidos', PedidoController::class)->middleware('auth:sanctum');
